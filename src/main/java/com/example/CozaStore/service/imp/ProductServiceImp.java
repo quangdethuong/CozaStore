@@ -8,6 +8,4 @@ import java.util.List;
 
 public interface ProductServiceImp {
     List<ProductResponse> getProductByCategory(int idC);
-
-
 }
