@@ -1,5 +1,7 @@
 package com.example.CozaStore.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.Set;
 
@@ -17,6 +19,7 @@ public class TagEntity {
     private Set<CategoryTag> categoryTags;
 
     @OneToMany(mappedBy = "tag")
+    @JsonIgnore
     private Set<TagBlogEntity> tagBlogs;
 
     public Set<TagBlogEntity> getTagBlogs() {

@@ -3,6 +3,7 @@ package com.example.CozaStore.entity;
 
 
 import com.example.CozaStore.entity.ids.TagBlogIds;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
@@ -13,6 +14,7 @@ import javax.persistence.ManyToOne;
 public class TagBlogEntity {
 
     @EmbeddedId
+    @JsonIgnore
     private TagBlogIds ids;
 
     @ManyToOne
@@ -21,6 +23,7 @@ public class TagBlogEntity {
 
     @ManyToOne
     @JoinColumn(name = "blog_id", insertable = false,updatable = false)
+    @JsonIgnore
     private BlogEntity blog;
 
     public TagBlogIds getIds() {
