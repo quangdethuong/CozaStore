@@ -2,6 +2,8 @@ package com.example.CozaStore.entity;
 
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.Set;
 
@@ -22,6 +24,7 @@ public class UserEntity {
     private String email;
 
     @OneToMany(mappedBy = "user")
+    @JsonIgnore
     private Set<BlogEntity> blogs;
 
     @OneToMany(mappedBy = "user")
