@@ -1,14 +1,15 @@
 package com.example.CozaStore.payload.response;
 
-public class CategoryResponse {
+public class SizeResponse {
     private int id;
     private String name;
 
-    public CategoryResponse(){}
-    public CategoryResponse(int id, String name) {
+    public SizeResponse(int id, String name) {
         this.id = id;
         this.name = name;
     }
+
+    public SizeResponse(){}
 
     public int getId() {
         return id;

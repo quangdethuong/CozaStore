@@ -10,9 +10,6 @@ public class ProductEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "image")
-    private String image;
-
     @Column(name = "name")
     private String name;
 
@@ -25,9 +22,6 @@ public class ProductEntity {
     @Column(name = "quantity")
     private int quantity;
 
-    @Column(name = "image_detail")
-    private String imageDetail;
-
     @ManyToOne
     @JoinColumn(name = "size_id")
     private SizeEntity size;
@@ -39,6 +33,10 @@ public class ProductEntity {
     @ManyToOne
     @JoinColumn(name = "category_id")
     private CategoryEntity category;
+
+    @ManyToOne
+    @JoinColumn(name = "image_id")
+    private ImageEntity image;
 
     @OneToMany(mappedBy = "product")
     private Set<OrderDetailEntity> orderDetails;
@@ -57,14 +55,6 @@ public class ProductEntity {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public String getImage() {
-        return image;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
     }
 
     public String getName() {
@@ -99,14 +89,6 @@ public class ProductEntity {
         this.quantity = quantity;
     }
 
-    public String getImageDetail() {
-        return imageDetail;
-    }
-
-    public void setImageDetail(String imageDetail) {
-        this.imageDetail = imageDetail;
-    }
-
     public SizeEntity getSize() {
         return size;
     }
@@ -129,5 +111,13 @@ public class ProductEntity {
 
     public void setCategory(CategoryEntity category) {
         this.category = category;
+    }
+
+    public ImageEntity getImage() {
+        return image;
+    }
+
+    public void setImage(ImageEntity image) {
+        this.image = image;
     }
 }

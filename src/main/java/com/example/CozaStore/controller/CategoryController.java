@@ -1,7 +1,6 @@
 package com.example.CozaStore.controller;
 
 
-import com.example.CozaStore.entity.ProductEntity;
 import com.example.CozaStore.payload.response.BaseResponse;
 import com.example.CozaStore.service.imp.CategoryServiceImp;
 import com.example.CozaStore.service.imp.ProductServiceImp;
@@ -9,8 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/category")
