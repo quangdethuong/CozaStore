@@ -1,5 +1,10 @@
 package com.example.CozaStore.entity;
 
+import com.example.CozaStore.payload.response.CategoryResponse;
+import com.example.CozaStore.payload.response.ColorResponse;
+import com.example.CozaStore.payload.response.ImageResponse;
+import com.example.CozaStore.payload.response.SizeResponse;
+
 import javax.persistence.*;
 import java.util.Set;
 
@@ -120,4 +125,6 @@ public class ProductEntity {
     public void setImage(ImageEntity image) {
         this.image = image;
     }
+
+
 }
