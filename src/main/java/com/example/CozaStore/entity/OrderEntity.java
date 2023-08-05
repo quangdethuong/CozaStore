@@ -1,5 +1,7 @@
 package com.example.CozaStore.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.Date;
 import java.util.Set;
@@ -12,6 +14,7 @@ public class OrderEntity {
     private int id;
 
     @Column(name = "date")
+    @JsonIgnore
     private Date date;
 
     @OneToMany(mappedBy = "order")
@@ -19,10 +22,12 @@ public class OrderEntity {
 
     @ManyToOne
     @JoinColumn(name = "country_id")
+    @JsonIgnore
     private CountryEntity country;
 
     @ManyToOne
     @JoinColumn(name = "user_id")
+    @JsonIgnore
     private UserEntity user;
 
     public CountryEntity getCountry() {

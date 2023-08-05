@@ -17,6 +17,8 @@ public class ProductResponse {
 
     private CategoryResponse category;
 
+    private int quantity;
+
     public ProductResponse(){
 
     }
@@ -62,6 +64,18 @@ public class ProductResponse {
         this.size = size;
         this.color = color;
         this.category = category;
+    }
+
+    public ProductResponse(int id, String name, double price, String description, ImageResponse image, SizeResponse size, ColorResponse color, CategoryResponse category, int quantity) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        this.description = description;
+        this.image = image;
+        this.size = size;
+        this.color = color;
+        this.category = category;
+        this.quantity = quantity;
     }
 
     public CategoryResponse getCategory() {
@@ -126,5 +140,13 @@ public class ProductResponse {
 
     public void setColor(ColorResponse color) {
         this.color = color;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 }
