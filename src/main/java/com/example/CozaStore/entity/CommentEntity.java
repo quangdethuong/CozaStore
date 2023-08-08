@@ -1,5 +1,7 @@
 package com.example.CozaStore.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -27,6 +29,7 @@ public class CommentEntity {
 
     @ManyToOne
     @JoinColumn(name = "blog_id")
+    @JsonIgnore
     private BlogEntity blog;
 
     public int getId() {
