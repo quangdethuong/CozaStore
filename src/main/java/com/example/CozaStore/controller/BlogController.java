@@ -12,6 +12,7 @@ import java.util.HashMap;
 
 @RestController
 @RequestMapping("/blog")
+@CrossOrigin(origins = "*")
 public class BlogController {
 
     @Autowired
