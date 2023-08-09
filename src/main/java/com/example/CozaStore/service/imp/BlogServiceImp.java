@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface BlogServiceImp {
     PagingDTO getAllBlog(int page, int size);
-    BlogEntity getBlogById();
+    BlogEntity getBlogById(int id);
     PagingDTO getAllBlogByTagId(int id, int page,int size);
     BlogMonthDTO getNumberBlogByMonth();
 }
