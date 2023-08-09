@@ -34,8 +34,8 @@ public class BlogService implements BlogServiceImp {
     }
 
     @Override
-    public BlogEntity getBlogById() {
-        return null;
+    public BlogEntity getBlogById(int id) {
+        return blogRepository.findById(id).get();
     }
 
     @Override

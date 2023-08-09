@@ -18,6 +18,12 @@ public class BlogController {
     @Autowired
     private BlogServiceImp blogServiceImp;
 
+
+    @GetMapping("/{id}")
+    public ResponseEntity<?> getBlogById(@PathVariable int id){
+        return new ResponseEntity<>(blogServiceImp.getBlogById(id), HttpStatus.OK);
+    }
+
     @GetMapping("")
     public ResponseEntity<?> getAllAndPagingBlog(@RequestParam HashMap<String,String> hashMap){
         int page = Integer.parseInt(hashMap.getOrDefault("page","0"));
