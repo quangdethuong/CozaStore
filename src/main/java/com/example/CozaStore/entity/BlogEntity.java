@@ -31,7 +31,6 @@ public class BlogEntity {
     private Set<TagBlogEntity> tagBlogs;
 
     @OneToMany(mappedBy = "blog")
-    @JsonIgnore
     private Set<CommentEntity> comments;
 
     @ManyToOne
