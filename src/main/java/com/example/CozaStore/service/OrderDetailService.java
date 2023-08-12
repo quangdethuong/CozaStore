@@ -19,7 +19,7 @@ public class OrderDetailService implements OrderDetailServiceImp {
 
 
     @Override
-    public void createOrderDetail(ProductResponse product, int order_id, Date date, int quantity) {
+    public void createOrderDetail(ProductResponse product,int order_id, Date date, int quantity) {
         OrderDetailEntity entity = new OrderDetailEntity();
         OrderDetailIds ids = new OrderDetailIds();
         ids.setOrderId(order_id);

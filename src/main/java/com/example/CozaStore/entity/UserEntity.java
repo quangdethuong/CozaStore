@@ -28,7 +28,26 @@ public class UserEntity {
     private Set<BlogEntity> blogs;
 
     @OneToMany(mappedBy = "user")
+    @JsonIgnore
     private Set<OrderEntity> orders;
+
+    public UserEntity(int id, String username, String password, String email, Set<BlogEntity> blogs, Set<OrderEntity> orders) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.email = email;
+        this.blogs = blogs;
+        this.orders = orders;
+    }
+
+    public UserEntity(int id, String username, String password) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+    }
+
+    public UserEntity() {
+    }
 
     public Set<OrderEntity> getOrders() {
         return orders;
