@@ -8,13 +8,17 @@ import javax.validation.constraints.NotNull;
 
 public class SignupRequest {
 
+    @NotNull(message = "Username must not null")
+
+    @NotEmpty(message = "Username not empty")
     private String username;
-    @NotNull
-    @NotEmpty
-    @Length(min = 8)
+    @NotNull(message = "Email must not null")
+
+    @NotEmpty(message = "Password not empty")
+    @Length(min = 8 , message = "password must have 8 digit")
     private String password;
 
-    @NotNull(message = "Email not null")
+    @NotNull(message = "Email must not null")
     @NotEmpty(message = "Email not empty")
     @Email(message = "Email invalid format" ,regexp = "^[a-zA-Z0-9]+(?:\\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(?:\\.[a-zA-Z0-9]+)*$")
     private String email;
