@@ -4,6 +4,7 @@ package com.example.CozaStore.controller;
 import com.example.CozaStore.exception.CustomException;
 import com.example.CozaStore.payload.request.SignupRequest;
 import com.example.CozaStore.payload.response.BaseResponse;
+import com.example.CozaStore.payload.response.LoginResponse;
 import com.example.CozaStore.payload.response.UserResponse;
 import com.example.CozaStore.service.imp.UserServiceImp;
 import com.example.CozaStore.utils.JwtHelper;
@@ -50,9 +51,11 @@ public class LoginController {
         authenticationManager.authenticate(token);
 
         String jwt = jwtHelper.generateToken(email);
+        int user_id = userServiceImp.getUserByEmail(email).getId();
+
         BaseResponse response = new BaseResponse();
         response.setStatusCode(200);
-        response.setData(jwt);
+        response.setData(new LoginResponse(user_id,jwt));
 
         return new ResponseEntity<>(response, HttpStatus.OK);
     }

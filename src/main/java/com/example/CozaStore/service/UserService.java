@@ -48,4 +48,11 @@ public class UserService implements UserServiceImp {
         UserResponse userResponse = new UserResponse(user.getId(), user.getEmail(), user.getUsername());
         return userResponse;
     }
+
+    @Override
+    public UserResponse getUserById(int userId) {
+        UserEntity userEntity = userRepository.findUserById(userId);
+        UserResponse userResponse = new UserResponse(userEntity.getId(), userEntity.getEmail(), userEntity.getUsername());
+        return userResponse;
+    }
 }

@@ -20,6 +20,7 @@ public class OrderDetailIds implements Serializable {
         this.orderId = orderId;
     }
 
+
     public int getProductId() {
         return productId;
     }
