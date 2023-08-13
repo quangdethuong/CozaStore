@@ -49,11 +49,11 @@ public class SecurityConfig {
 //    CORS
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        return http.csrf().disable() //Tắt cấu hình liên quan tới tấn công CSRF
+        return http.cors().and().csrf().disable() //Tắt cấu hình liên quan tới tấn công CSRF
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS) //Khai báo không sử dụng session trong project
                 .and()
                 .authorizeHttpRequests() // Quy định lại các rule liên quan tới chứng thực cho link được gọi
-                .antMatchers("/signin","/signup", "/demo/**", "/file/**","/category/**","/product/**","/blog/**","/tag/**", "/account").permitAll()
+                .antMatchers("/signin","/signup", "/demo/**", "/file/**","/category/**","/product/**","/blog/**","/tag/**","/checkout/**").permitAll()
                 .anyRequest().authenticated() //Tất cả các link còn lại đều phải chứng thực
                 .and()
                 .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class)
