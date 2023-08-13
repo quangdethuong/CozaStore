@@ -19,9 +19,9 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
+@CrossOrigin("*")
 
 @RestController
-@CrossOrigin("*")
 public class LoginController {
 
     @Autowired
@@ -40,6 +40,7 @@ public class LoginController {
         "data" : kiểu gì cũng được
      }
      */
+    @CrossOrigin
 
     @RequestMapping(value = "/signin", method = RequestMethod.POST)
     public ResponseEntity<?> signin(
@@ -58,7 +59,7 @@ public class LoginController {
 
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
-
+    @CrossOrigin
     @RequestMapping(value = "/signup", method = RequestMethod.POST)
     public ResponseEntity<?> signup(@Valid SignupRequest request, BindingResult result) {
         List<FieldError> list = result.getFieldErrors();
@@ -80,6 +81,8 @@ public class LoginController {
 
 
     }
+
+    @CrossOrigin
     @RequestMapping(value =  "/account", method = RequestMethod.GET)
     public ResponseEntity<?> getUserByEmail(@RequestParam String email){
 
